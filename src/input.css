@@ -1,0 +1,60 @@
+@import "tailwindcss";
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+@theme {
+  /* Isso substitui a fonte padrão (font-sans) do Tailwind pela Poppins */
+  --font-sans: "Montserrat", sans-serif, ui-sans-serif; 
+  
+}
+
+@layer base {
+    hr {
+        @apply m-0 border-gray-500
+    }
+}
+
+@layer components {
+    .sections {
+        @apply flex flex-col bg-gray-900 m-2 rounded-lg justify-center items-center lg:m-12
+    }
+
+    .titulos-sections{
+        @apply text-center bg-amber-400 text-black text-xl font-medium rounded-md w-fit px-2
+    }
+
+    .card{
+        @apply flex flex-col justify-center text-center items-center gap-2 p-5
+    }
+}
+
+
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 10px rgba(59,130,246,0.5);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(59,130,246,0.9);
+  }
+}
+
+.glow {
+  animation: glow 2s infinite;
+}
+
+@keyframes shine {
+  0% {
+    background-position: -200%;
+  }
+  100% {
+    background-position: 200%;
+  }
+}
+
+.text-shine {
+  background: linear-gradient(90deg, #fbbf24, #ffffff, #fbbf24);
+  background-size: 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 5s linear infinite;
+}
